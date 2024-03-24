@@ -114,7 +114,6 @@ export const updatePet = asyncErrorHandling(async (req, res) => {
         return errorHanlder(createError("Could not find the pet"), req, res);
     }
 
-    // Check if the image file is present in the request
     if (req.files && req.files.image) {
         const { image } = req.files;
 
@@ -129,7 +128,6 @@ export const updatePet = asyncErrorHandling(async (req, res) => {
             return errorHanlder(createError("Failed to upload"), req, res);
         }
 
-        // Update pet with the new image
         const updatedPet = await Pet.findByIdAndUpdate(id, {
             ...req.body, image: {
                 public_id: cloudinaryResponse.public_id,
@@ -147,7 +145,6 @@ export const updatePet = asyncErrorHandling(async (req, res) => {
             updatedPet
         });
     } else {
-        // Update pet without changing the image
         const updatedPet = await Pet.findByIdAndUpdate(id, req.body, {
             returnOriginal: false,
             runValidators: true,
