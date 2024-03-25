@@ -68,14 +68,22 @@ span {
     align-items: center;
     gap: 2rem;
     padding:1rem 0rem;
+    justify-content: space-between;
   }
 
   .card_img {
-    width: 40%;
+    width: 150px !important;
     height: 14rem;
   }
   .description_two,
   .description_one {
     gap: 2rem;
+
+  }
+
+  .description_container{
+    justify-content: space-between;
+    width: 60%;
+
   }
 }

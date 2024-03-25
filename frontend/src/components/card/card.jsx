@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./card.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 export default function Card({ pet }) {
     const [img, setImg] = useState(null); // Initialize img state as null
@@ -26,7 +25,7 @@ export default function Card({ pet }) {
 
             {/* Show LazyLoadImage when img is loaded */}
             {img && (
-                <LazyLoadImage
+                <img
                     src={img.src}
                     className={styles.card_img}
                     alt={pet.name}

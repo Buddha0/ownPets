@@ -19,7 +19,7 @@ export default function AllPets() {
             .then(function (response) {
                 setPets(response.data.getallpets);
                 setFilteredPets(response.data.getallpets);
-                setLoadedImages(false)
+            
 
             })
             .catch(function (error) {
